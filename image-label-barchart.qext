@@ -1,0 +1,20 @@
+{
+    "name": "image-label-barchart",
+    "description": "image-label-barchart Extension Example",
+    "bundle": {
+        "id": "Kab-s Game Example Bundle",
+        "name": "Kab-s Game Example Bundle",
+        "description": "These are set of example extensions designed to support the Data Literacy Project"
+    },
+    "icon": "bar-chart-vertical",
+    "type": "visualization",
+    "version": "3.0.0",
+    "author": "Kabir Rab",
+    "homepage": "https://kabonline.net",
+    "keywords": "qlik-sense, chart, visualization",
+    "license": "MIT",
+    "repository": "",
+    "dependencies": {
+        "qlik-sense": ">=3.0.x"
+    }
+}
