@@ -53,12 +53,14 @@ define([
 								html += "class='selectable' data-value='" + dim.qElemNumber + "'"
 							}
 							html += '>';
-							html += "<div class='item-label' style='width:40px;'><img src='"+ profilepic +"' alt='Avatar' align='right'></div>";
-							html += "<div class='bar-2' style='background-color:"+barColour+"; width:" + Math.round(w * (meas.qNum / vmax )) + "px;'>" + dim.qText + "</div><div class='measure-text' style='width:" + Math.round((w-5)-(w * (meas.qNum / vmax ))) + "px;'>"+ meas.qText + "</div>";
-							html += "<div class='item-label-gap' style='width:40px;'>&nbsp;</div><div class='bar-gap' style='width:" + Math.round(w) + "px;'></div>";
+							html += "<div class='qv-object-image-label-barchart-item-label qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:40px;'><img src='"+ profilepic +"' alt='Avatar' align='right'></div>";
+							html += "<div class='qv-object-image-label-barchart-bar-2 qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='background-color:"+barColour+"; width:" + Math.round(w * (meas.qNum / vmax )) + "px;'";
+							html += ">" + dim.qText + "</div><div class='qv-object-image-label-barchart-measure-text qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:" + Math.round((w-5)-(w * (meas.qNum / vmax ))) + "px;'>"+ meas.qText + "</div>";
+							html += "<div class='qv-object-image-label-barchart-item-label-gap' style='width:40px;'>&nbsp;</div><div class='qv-object-image-label-barchart-bar-gap' style='width:" + Math.round(w) + "px;'></div>";
 							html += "</div>";
 						}
 					});
+					console.log("test");
 					$element.html(html);
 					$element.find('.selectable').on('click', function() {
 						if(this.hasAttribute("data-value")) {

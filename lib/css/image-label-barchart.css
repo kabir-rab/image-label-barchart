@@ -3,7 +3,7 @@
 	font-family: QlikView Sans,sans-serif;
 	font-size: 12px;
 }
-.qv-object-image-label-barchart .item-label {
+.qv-object-image-label-barchart-item-label {
 	float:left;
 	height:32px;
 	width:50px;
@@ -14,7 +14,7 @@
 	padding-right: 2px;
 }
 
-.qv-object-image-label-barchart .item-label-gap {
+.qv-object-image-label-barchart-item-label-gap {
 	float:left;
 	height:12px;
 	width:50px;
@@ -24,7 +24,7 @@
 	padding-right: 2px;
 }
 
-.qv-object-image-label-barchart .bar-2 {
+.qv-object-image-label-barchart-bar-2 {
 	float:left;
 	/*clear:right;*/
 	height:32px;
@@ -37,7 +37,7 @@
 }
 
 
-.qv-object-image-label-barchart .bar-gap {
+.qv-object-image-label-barchart-bar-gap {
 	float:left;
 	height:12px;	
 	border-left: thin solid #CCCCCC;
@@ -50,7 +50,7 @@
 	margin-right: 4px;
 }
 
-.qv-object-image-label-barchart .measure-text {
+.qv-object-image-label-barchart-measure-text {
 	/*float:right;*/
 	height:32px;
 	/*width:150px;*/
@@ -60,3 +60,36 @@
 	text-align: left;	
 	padding-left: 2px;
 }
+
+.qv-object-image-label-barchart-animated {
+	-webkit-animation-duration: 0.75s;
+	animation-duration: 0.75s;	
+}
+
+@-webkit-keyframes qv-object-image-label-barchart-fadeInTop {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@keyframes qv-object-image-label-barchart-fadeInTop {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.qv-object-image-label-barchart-fadeInTop {
+	-webkit-animation-name: qv-object-image-label-barchart-fadeInTop;
+	animation-name: qv-object-image-label-barchart-fadeInTop;
+}
+
