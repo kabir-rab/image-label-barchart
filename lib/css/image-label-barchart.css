@@ -3,6 +3,7 @@
 	font-family: QlikView Sans,sans-serif;
 	font-size: 12px;
 }
+
 .qv-object-image-label-barchart-item-label {
 	float:left;
 	height:32px;
@@ -36,13 +37,11 @@
 	border-left: thin solid #CCCCCC;
 }
 
-
 .qv-object-image-label-barchart-bar-gap {
 	float:left;
 	height:12px;	
 	border-left: thin solid #CCCCCC;
 }
-
 
 .qv-object-image-label-barchart img {
     max-width: auto;
@@ -92,4 +91,3 @@
 	-webkit-animation-name: qv-object-image-label-barchart-fadeInTop;
 	animation-name: qv-object-image-label-barchart-fadeInTop;
 }
-
