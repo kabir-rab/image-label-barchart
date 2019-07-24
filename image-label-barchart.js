@@ -7,21 +7,7 @@ define([
 	],
 	function(qlik, $, props, initProps, cssContent) {
 		'use strict';
-		var backgroundPalette = [
-			"#b0afae",
-			"#7b7a78",
-			"#545352",
-			"#4477aa",
-			"#7db8da",
-			"#b6d7ea",
-			"#46c646",
-			"#f93f17",
-			"#ffcf02",
-			"#276e27",
-			"#ffffff",
-			"#000000"
-		],
-		support = {
+		var support = {
 			snapshot: true,
 			export: true,
 			exportData : true
@@ -78,7 +64,7 @@ define([
 					});
 				}
 
-				$element.css("background-color", backgroundPalette[layout.chartColor]);
+				$element.css("background-color", layout.chartColor.color);
 
 				return qlik.Promise.resolve();
 			}
