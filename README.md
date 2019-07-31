@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/kabir-rab/Variable-Editor/total.svg)]()
+
 # image-label-bar-chart
 This is a Qlik Sense bar chart extension example. This extension is supposed to be only an example and can/will work on production environment, however this is not fully polished (need to introduce resize rather than drawing the chart on all change/resize events). This chart allows custom colouring of the bars (one colour or multiple colours based on expression). Also allows chart background colour option.
 
