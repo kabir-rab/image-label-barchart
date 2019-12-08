@@ -35,6 +35,9 @@
 	font-weight: bold;
 	background: #4477AA;/*#4477AA; /*Qlik blue*/
 	border-left: thin solid #CCCCCC;
+	text-overflow: ellipsis;  
+  	white-space: nowrap;
+  	overflow: hidden;
 }
 
 .qv-object-image-label-barchart-bar-gap {
