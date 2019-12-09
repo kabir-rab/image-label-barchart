@@ -2,7 +2,7 @@ define([
 		"qlik", 
 		"jquery", 
 		"./lib/js/image-label-barchart-properties",
-		"./lib/js/image-label-barchart-initialprops", 
+		"./lib/js/image-label-barchart-initialprops",		
 		"text!./lib/css/image-label-barchart.css"
 	],
 	function(qlik, $, props, initProps, cssContent) {
@@ -25,7 +25,7 @@ define([
 					measures = layout.qHyperCube.qMeasureInfo, 
 					elementWidth = $element.width() - 60, 
 					qData = layout.qHyperCube.qDataPages[0], 
-					vmax = (measures && measures[0]) ? measures[0].qMax * 1.25 : 1,
+					vMax = (measures && measures[0]) ? measures[0].qMax * 1.25 : 1,
 					html = "";
 
 				if(qData && qData.qMatrix) {
@@ -33,7 +33,7 @@ define([
 						if(row.length > 1) {
 							var dim = row[0], 
 								meas = row[1], 
-								profilepic = row[0].qAttrExps.qValues[0].qText, 
+								profilePic = row[0].qAttrExps.qValues[0].qText, 
 								barColour = row[0].qAttrExps.qValues[1].qText;
 							
 							if(dim.qIsOtherCell) {
@@ -45,13 +45,13 @@ define([
 								html += "class='selectable' data-value='" + dim.qElemNumber + "'"
 							}
 							html += '>';
-							html += "<div class='qv-object-image-label-barchart-item-label qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:40px;'><img src='"+ profilepic +"' alt='Avatar' align='right'></div>";
-							html += "<div class='qv-object-image-label-barchart-bar-2 qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='background-color:"+barColour+"; width:" + Math.round(elementWidth * (meas.qNum / vmax )) + "px;'";
-							html += ">" + dim.qText + "</div><div class='qv-object-image-label-barchart-measure-text qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:" + Math.round((elementWidth-5)-(elementWidth * (meas.qNum / vmax ))) + "px;'>"+ meas.qText + "</div>";
+							html += "<div class='qv-object-image-label-barchart-item-label qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:40px;'><img src='"+ profilePic +"' alt='Avatar' align='right'></div>";
+							html += "<div class='qv-object-image-label-barchart-bar-2 qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='background-color:"+barColour+"; width:" + Math.round(elementWidth * (meas.qNum / vMax )) + "px;'";
+							html += ">" + dim.qText + "</div><div class='qv-object-image-label-barchart-measure-text qv-object-image-label-barchart-animated qv-object-image-label-barchart-fadeInTop' style='width:" + Math.round((elementWidth-5)-(elementWidth * (meas.qNum / vMax ))) + "px;'>"+ meas.qText + "</div>";
 							html += "<div class='qv-object-image-label-barchart-item-label-gap' style='width:40px;'>&nbsp;</div><div class='qv-object-image-label-barchart-bar-gap' style='width:" + Math.round(elementWidth) + "px;'></div>";
-							html += "</div>";
+							html += '</div>'
 						}
-					});					
+					});
 					$element.html(html);
 					$element.find('.selectable').on('click', function() {
 						if(this.hasAttribute("data-value")) {
@@ -61,11 +61,10 @@ define([
 							self.selectValues(dim, [value], true);
 							this.classList.toggle("selected");
 						}
-					});
+					});					
 				}
-
-				$element.css("background-color", layout.chartColor.color);
-
+				var backgroundColor = layout.chartColorSwitch === false ? '':layout.chartColor.color;
+				$element.css("background-color", backgroundColor);
 				return qlik.Promise.resolve();
 			}
 		};
